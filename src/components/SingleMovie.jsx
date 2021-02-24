@@ -9,6 +9,7 @@ const SingleMovie = ({ movie }) => {
         <img
           className={style.single_movie_img}
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+          alt="single movie"
         />
         <div className={style.single_movie_overview}>
           <h5>Overview</h5>
