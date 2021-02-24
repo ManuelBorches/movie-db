@@ -2,6 +2,7 @@
 
 # api keys
 env.js  
+.env
 
 # dependencies
 /node_modules
