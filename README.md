@@ -19,4 +19,4 @@ npm install
 npm start
 ```
 
-4. Ready! Go to http://localhost:3000/ on your browser and you will see the project on action 😎
+Ready! Go to http://localhost:3000/ on your browser and you will see the project on action 😎
