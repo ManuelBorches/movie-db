@@ -1,22 +1,32 @@
 import React from "react";
-import style from "../assets/index.module.css";
+import {
+  SingleMovieTitle,
+  SingleMovieSubtitle,
+  SingleMovieContainer,
+  SingleMovieImage,
+  SingleMovieOverviewContainer,
+  SingleMovieOverviewDescription,
+} from "./SingleMovie.elements";
 
 const SingleMovie = ({ movie }) => {
   return (
     <>
-      <h1>{movie.title}</h1>
-      <div className={style.single_movie_container}>
-        <img
-          className={style.single_movie_img}
+      <SingleMovieTitle>{movie.title}</SingleMovieTitle>
+      <SingleMovieContainer>
+        <SingleMovieImage
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
           alt="single movie"
         />
-        <div className={style.single_movie_overview}>
-          <h5>Overview</h5>
-          <p>{movie.overview}</p>
-          <h5>Rating: {movie.vote_average}</h5>
-        </div>
-      </div>
+        <SingleMovieOverviewContainer>
+          <SingleMovieSubtitle>Overview</SingleMovieSubtitle>
+          <SingleMovieOverviewDescription>
+            {movie.overview}
+          </SingleMovieOverviewDescription>
+          <SingleMovieSubtitle>
+            Rating: {movie.vote_average}
+          </SingleMovieSubtitle>
+        </SingleMovieOverviewContainer>
+      </SingleMovieContainer>
     </>
   );
 };
