@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "../assets/index.module.css";
+import {PageTitle, NavList } from "./Home.elements"
 
 const Home = ({ suggestedMovies, searchMovies }) => {
+  
   return (
     <>
       {searchMovies.length ? (
         <>
+        
           <h2>Search Movies</h2>
           <div className={style.search_movies_container}>
             {searchMovies &&
@@ -26,7 +29,7 @@ const Home = ({ suggestedMovies, searchMovies }) => {
         </>
       ) : (
         <>
-          <h2>Suggested Movies</h2>
+          <PageTitle>Suggested Movies</PageTitle>
           <div className={style.movies_container}>
             {suggestedMovies &&
               suggestedMovies.map((movie) => {
