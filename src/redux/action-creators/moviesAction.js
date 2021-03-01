@@ -8,15 +8,15 @@ export const setBackToHome = (data) => ({ type: SET_BACK_TO_HOME, payload: data 
 export const setRatingFilter = (data) => ({ type: SET_RATING_FILTER, payload: data })
 
 export const fetchSuggestedMovies = () => dispatch =>
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=f0a09f3ad4b7e3e33ebbf193522f7ee6&sort_by=popularity.desc`)
+    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&sort_by=popularity.desc`)
     .then(res => dispatch(setSuggestedMovies(res.data.results)))
 
 export const fetchMovies = (movieName) => dispatch =>
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=f0a09f3ad4b7e3e33ebbf193522f7ee6&query=${movieName}`)
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&query=${movieName}`)
     .then(res => dispatch(setMovies(res.data.results)))
 
 export const fetchSingleMovie = (movieId) => dispatch =>
-    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=f0a09f3ad4b7e3e33ebbf193522f7ee6`)
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}`)
     .then(res => dispatch(setSingleMovie(res.data)))
     
 
