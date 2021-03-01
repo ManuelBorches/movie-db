@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import style from "../assets/index.module.css";
 import {SearchTitle, SuggestedMoviesContainer,  MoviesContainer, MovieCardContainer, MovieLink, MovieImage, SuggestedMovieTitle} from "./Home.elements"
 const Home = ({ suggestedMovies, searchMovies }) => {
   return (
