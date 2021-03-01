@@ -8,7 +8,7 @@ const SingleMovieContainer = ({ movieId }) => {
   const movie = useSelector((state) => state.movies.selected);
 
   useEffect(() => {
-    dispatch(fetchSingleMovie(movieId));
+    dispatch(fetchSingleMovie(458576));
   }, []);
 
   return <SingleMovie movie={movie} />;
