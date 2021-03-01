@@ -1,47 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "../assets/index.module.css";
-
+import {SearchTitle, SuggestedMoviesContainer,  MoviesContainer, MovieCardContainer, MovieLink, MovieImage, SuggestedMovieTitle} from "./Home.elements"
 const Home = ({ suggestedMovies, searchMovies }) => {
   return (
     <>
       {searchMovies.length ? (
         <>
-          <h2>Search Movies</h2>
-          <div className={style.search_movies_container}>
+          <SearchTitle>Search Movies</SearchTitle>
+          <MoviesContainer >
             {searchMovies &&
               searchMovies.map((movie) => {
                 return (
-                  <div key={movie.id} className={style.movie_container}>
-                    <Link to={`/movie/search/${movie.id}`}>
-                      <img
+                  <MovieCardContainer key={movie.id}>
+                    <MovieLink to={`/movie/search/${movie.id}`}>
+                      <MovieImage
                         src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                         alt="search movies"
                       />
-                    </Link>
-                  </div>
+                    </MovieLink>
+                  </MovieCardContainer>
                 );
               })}
-          </div>
+          </MoviesContainer>
         </>
       ) : (
         <>
-          <h2>Suggested Movies</h2>
-          <div className={style.movies_container}>
+          <SuggestedMovieTitle>Suggested Movies</SuggestedMovieTitle>
+          <SuggestedMoviesContainer >
             {suggestedMovies &&
               suggestedMovies.map((movie) => {
                 return (
-                  <div key={movie.id} className={style.movie_container}>
-                    <Link to={`/movie/search/${movie.id}`}>
-                      <img
+                  <MovieCardContainer key={movie.id}>
+                    <MovieLink to={`/movie/search/${movie.id}`}>
+                      <MovieImage
                         src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                         alt="suggested movies"
                       />
-                    </Link>
-                  </div>
+                    </MovieLink>
+                  </MovieCardContainer>
                 );
               })}
-          </div>
+          </SuggestedMoviesContainer>
         </>
       )}
     </>
