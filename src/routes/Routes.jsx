@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../modules/Home/Home.jsx"
 import NavBarContainer from "../components/NavBar";
-import SingleMovieContainer from "../components/SingleMovie"
+import SingleMovieContainer from "../containers/SingleMovieContainer.jsx"
 import * as ROUTES from "./routes"
 
 function Routes() {
@@ -13,9 +13,10 @@ function Routes() {
         <Route path={ROUTES.HOME}>
           <Home />
         </Route>
-        <Route path="/movie/search/:id"    render={({ match }) => (
-              <SingleMovieContainer movieId={match.params.id} />
-            )}>
+        <Route path="/movie/search/:id"    
+        render={({ match }) => (
+            <SingleMovieContainer movieId={match.params.id} />
+        )}>
         </Route> 
       </Switch>
     </Router>

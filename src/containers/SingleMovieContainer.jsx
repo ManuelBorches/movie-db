@@ -4,11 +4,12 @@ import SingleMovie from "../components/SingleMovie";
 import { fetchSingleMovie } from "../redux/action-creators/moviesAction";
 
 const SingleMovieContainer = ({ movieId }) => {
+  console.log("asdasd")
   const dispatch = useDispatch();
   const movie = useSelector((state) => state.movies.selected);
 
   useEffect(() => {
-    dispatch(fetchSingleMovie(458576));
+    dispatch(fetchSingleMovie(movieId));
   }, []);
 
   return <SingleMovie movie={movie} />;
