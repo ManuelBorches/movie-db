@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomeContainer from "../containers/HomeContainer";
 import SingleMovieContainer from "../containers/SingleMovieContainer";
 import NavBarContainer from "../containers/NavBarContainer";
+import "../assets/index.css";
 
 const App = () => {
   return (

@@ -3,8 +3,22 @@ import { Link } from "react-router-dom";
 import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import style from "../assets/index.module.css";
-import { NavbarContainer, NavbarLogoContainer, NavbarLink,FormInput, Button, NavbarImg, NavbarSearchContainer, NavbarForm } from "./Navbar.elements"
+import {
+  MenuBar,
+  MobileIcon,
+  NavItem,
+  NavbarMenu,
+  NavbarContainer,
+  NavbarLogoContainer,
+  NavbarLink,
+  FormInput,
+  Button,
+  NavbarImg,
+  NavbarSearchContainer,
+  NavbarForm,
+} from "./Navbar.elements";
+import { FaBars } from "react-icons/fa";
+
 const NavBar = ({
   handleChange,
   handleSubmit,
@@ -24,7 +38,7 @@ const NavBar = ({
         </NavbarLink>
       </NavbarLogoContainer>
       <NavbarSearchContainer>
-        <Box component="fieldset" mb={3} borderColor="transparent">
+        {/* <Box component="fieldset" mb={3} borderColor="transparent">
           <Typography component="legend"></Typography>
           <Rating
             name="simple-controlled"
@@ -33,19 +47,21 @@ const NavBar = ({
               handleRating(newValue);
             }}
           />
-        </Box>
+        </Box> */}
         <NavbarForm onSubmit={handleSubmit}>
-          <FormInput
-            className={style.input}
-            type="text"
-            value={searchInput}
-            onChange={handleChange}
-          />
-          <Button  onClick={handleSubmit}>
-            search
-          </Button>
+          <FormInput type="text" value={searchInput} onChange={handleChange} />
+          <Button onClick={handleSubmit}>search</Button>
+          <MobileIcon>
+            <FaBars />
+          </MobileIcon>
         </NavbarForm>
       </NavbarSearchContainer>
+      {/* <NavbarMenu>
+        <NavItem>
+
+          NavbarMenu
+        </NavItem>
+        </NavbarMenu> */}
     </NavbarContainer>
   );
 };
