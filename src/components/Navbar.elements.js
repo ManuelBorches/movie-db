@@ -7,10 +7,6 @@ export const NavbarContainer = styled.div`
   display: flex;
   padding-left: 10px;
   align-items: center;
-
-  @media (min-width: 599px) {
-    justify-content: space-between;
-  }
 `;
 export const NavbarLogoContainer = styled.div`
   width: 4rem;
@@ -18,7 +14,7 @@ export const NavbarLogoContainer = styled.div`
 
   display: none;
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     display: flex;
     width: 4rem;
     padding-left: 1rem;
@@ -47,7 +43,7 @@ export const MenuBar = styled.div`
 `;
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 698px) {
+  @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 10px;
@@ -69,7 +65,7 @@ export const NavbarSearchContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 599px) {
+  @media (min-width: 768px) {
     padding-left: 40px;
   }
 `;
@@ -81,7 +77,7 @@ export const FormInput = styled.input`
   width: 10rem;
   outline: none;
 
-  @media (min-width: 599px) {
+  @media (min-width: 768px) {
     width: 20rem;
   }
 `;

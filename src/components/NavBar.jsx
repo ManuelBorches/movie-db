@@ -38,7 +38,7 @@ const NavBar = ({
         </NavbarLink>
       </NavbarLogoContainer>
       <NavbarSearchContainer>
-        {/* <Box component="fieldset" mb={3} borderColor="transparent">
+        <Box component="fieldset" mb={3} borderColor="transparent">
           <Typography component="legend"></Typography>
           <Rating
             name="simple-controlled"
@@ -47,7 +47,7 @@ const NavBar = ({
               handleRating(newValue);
             }}
           />
-        </Box> */}
+        </Box>
         <NavbarForm onSubmit={handleSubmit}>
           <FormInput type="text" value={searchInput} onChange={handleChange} />
           <Button onClick={handleSubmit}>search</Button>
