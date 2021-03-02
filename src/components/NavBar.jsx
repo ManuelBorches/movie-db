@@ -1,13 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Rating from "@material-ui/lab/Rating";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import {
-  MenuBar,
-  MobileIcon,
-  NavItem,
-  NavbarMenu,
   NavbarContainer,
   NavbarLogoContainer,
   NavbarLink,
@@ -17,16 +9,8 @@ import {
   NavbarSearchContainer,
   NavbarForm,
 } from "./Navbar.elements";
-import { FaBars } from "react-icons/fa";
 
-const NavBar = ({
-  handleChange,
-  handleSubmit,
-  backToHome,
-  searchInput,
-  handleRating,
-  ratingValue,
-}) => {
+const NavBar = ({ handleChange, handleSubmit, backToHome, searchInput }) => {
   return (
     <NavbarContainer>
       <NavbarLogoContainer onClick={backToHome}>
@@ -38,22 +22,9 @@ const NavBar = ({
         </NavbarLink>
       </NavbarLogoContainer>
       <NavbarSearchContainer>
-        <Box component="fieldset" mb={3} borderColor="transparent">
-          <Typography component="legend"></Typography>
-          <Rating
-            name="simple-controlled"
-            value={ratingValue}
-            onChange={(event, newValue) => {
-              handleRating(newValue);
-            }}
-          />
-        </Box>
         <NavbarForm onSubmit={handleSubmit}>
           <FormInput type="text" value={searchInput} onChange={handleChange} />
           <Button onClick={handleSubmit}>search</Button>
-          <MobileIcon>
-            <FaBars />
-          </MobileIcon>
         </NavbarForm>
       </NavbarSearchContainer>
     </NavbarContainer>

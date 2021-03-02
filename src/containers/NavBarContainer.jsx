@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import NavBar from "../components/NavBar";
 import {
   fetchMovies,
   setBackToHome,
-  setRatingFilter,
 } from "../redux/action-creators/moviesAction";
 
 const NavBarContainer = () => {
   const dispatch = useDispatch();
   const [searchInput, setSearchInput] = useState("");
-  const ratingValue = useSelector((state) => state.movies.ratingFilter);
 
   const handleChange = (event) => {
     setSearchInput(event.target.value);
@@ -20,10 +18,6 @@ const NavBarContainer = () => {
     event.preventDefault();
     dispatch(fetchMovies(searchInput));
     setSearchInput("");
-  };
-
-  const handleRating = (rating) => {
-    dispatch(setRatingFilter(rating));
   };
 
   const backToHome = () => {
@@ -36,8 +30,6 @@ const NavBarContainer = () => {
       handleSubmit={handleSubmit}
       backToHome={backToHome}
       searchInput={searchInput}
-      handleRating={handleRating}
-      ratingValue={ratingValue}
     />
   );
 };

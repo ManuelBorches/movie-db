@@ -9,7 +9,7 @@ const SingleMovieContainer = ({ movieId }) => {
 
   useEffect(() => {
     dispatch(fetchSingleMovie(movieId));
-  }, []);
+  }, [dispatch, movieId]);
 
   return <SingleMovie movie={movie} />;
 };

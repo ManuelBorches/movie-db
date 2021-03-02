@@ -1,12 +1,23 @@
 import React from "react";
-import {SearchTitle, SuggestedMoviesContainer,  MoviesContainer, MovieCardContainer, MovieLink, MovieImage, SuggestedMovieTitle} from "./Home.elements"
-const Home = ({ suggestedMovies, searchMovies }) => {
+import RatingStars from "./RatingStars";
+
+import {
+  SearchTitle,
+  SuggestedMoviesContainer,
+  MoviesContainer,
+  MovieCardContainer,
+  MovieLink,
+  MovieImage,
+  SuggestedMovieTitle,
+} from "./Home.elements";
+const Home = ({ suggestedMovies, searchMovies, handleRating, ratingValue }) => {
   return (
     <>
       {searchMovies.length ? (
         <>
           <SearchTitle>Search Movies</SearchTitle>
-          <MoviesContainer >
+          <RatingStars handleRating={handleRating} ratingValue={ratingValue} />
+          <MoviesContainer>
             {searchMovies &&
               searchMovies.map((movie) => {
                 return (
@@ -25,7 +36,7 @@ const Home = ({ suggestedMovies, searchMovies }) => {
       ) : (
         <>
           <SuggestedMovieTitle>Suggested Movies</SuggestedMovieTitle>
-          <SuggestedMoviesContainer >
+          <SuggestedMoviesContainer>
             {suggestedMovies &&
               suggestedMovies.map((movie) => {
                 return (
