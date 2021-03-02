@@ -56,12 +56,6 @@ const NavBar = ({
           </MobileIcon>
         </NavbarForm>
       </NavbarSearchContainer>
-      {/* <NavbarMenu>
-        <NavItem>
-
-          NavbarMenu
-        </NavItem>
-        </NavbarMenu> */}
     </NavbarContainer>
   );
 };
